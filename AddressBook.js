@@ -42,3 +42,19 @@ class Address {//uc1
         }
     }
 }
+//uc3
+let addressBook = []  //array to store address
+//function to store addressbook to array
+function addAddress(address){
+    addressBook.push(address);
+}
+//uc4
+function editAddress(name, address){ //function to find and edit contact
+    let existingAddress = addressBook.find(name => address.firstName === name);
+    if (existingAddress) {
+        Object.assign(existingAddress, address);
+        address.validate();
+    } else {
+        throw new Error("contact not found");
+    }
+}

@@ -1,5 +1,5 @@
 //class to store contant details
-class Address {
+class Address {//uc1
     constructor(firstName, lastName, address, city, state, zip, phone, email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -12,7 +12,7 @@ class Address {
         //validate fields
         this.validate();
     }
-    validate() {
+    validate() { //uc2
         //regex 
         const nameRegex = /^[A-Z][a-zA-Z]{2,}$/;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -41,4 +41,9 @@ class Address {
             throw new Error("Invalid ZIP code");
         }
     }
+}
+let addressBook = []  //uc3
+//function to store addressbook to array
+function addAddress(address){
+    addressBook.push(address);
 }

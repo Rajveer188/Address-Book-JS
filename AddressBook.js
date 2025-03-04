@@ -50,11 +50,19 @@ function addAddress(address){
 }
 //uc4
 function editAddress(name, address){ //function to find and edit contact
-    let existingAddress = addressBook.find(name => address.firstName === name);
+    let existingAddress = addressBook.find(address => address.firstName === name);
     if (existingAddress) {
         Object.assign(existingAddress, address);
         address.validate();
     } else {
-        throw new Error("contact not found");
+        console.log("address not found");
+    }
+}
+function deleteAddress(name){ //uc5
+    let index = addressBook.findIndex(address => address.firstName === name)
+    if(index !== -1){
+        addressBook.splice(index,1);
+    }else{
+        console.log("address not found");
     }
 }

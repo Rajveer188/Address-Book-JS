@@ -46,6 +46,12 @@ class Address {//uc1
 let addressBook = []  //array to store address
 //function to store addressbook to array
 function addAddress(address){
+    //uc7
+    let duplicateLength = addressBook.filter(existingAddress => existingAddress.firstName === address.firstName);
+    if(duplicateLength > 0){
+        console.log(address.firstName, " already exist");
+        return;
+    }
     addressBook.push(address);
 }
 //uc4

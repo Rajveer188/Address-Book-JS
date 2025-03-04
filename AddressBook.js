@@ -79,3 +79,8 @@ function findNumberOfAddress(){ //uc6
 function searchByCityOrState(city, state) { //uc8
     return addressBook.filter(address => address.city === city || address.state === state);
 }
+function viewByCityOrState(city, state){ //uc9
+    let viewAddress = addressBook.filter(address => address.city === city || address.state === state);
+    console.log(viewAddress);
+    
+}

@@ -66,3 +66,7 @@ function deleteAddress(name){ //uc5
         console.log("address not found");
     }
 }
+function findNumberOfAddress(){ //uc6
+    let totalCount = addressBook.reduce(count => count+1, 0);
+    return totalCount;
+}

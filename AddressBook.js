@@ -82,5 +82,8 @@ function searchByCityOrState(city, state) { //uc8
 function viewByCityOrState(city, state){ //uc9
     let viewAddress = addressBook.filter(address => address.city === city || address.state === state);
     console.log(viewAddress);
-    
 }
+function countByCityOrState(city, state){//uc10
+    return searchByCityOrState(city,state).length;
+}
+

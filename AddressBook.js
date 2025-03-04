@@ -1,4 +1,4 @@
-//class to store contant details
+//class to store address details
 class Address {//uc1
     constructor(firstName, lastName, address, city, state, zip, phone, email) {
         this.firstName = firstName;
@@ -35,7 +35,7 @@ class Address {//uc1
         if (!addressRegex.test(this.city)) {
             throw new Error("Invalid city");
         }
-        if (!phoneRegex.test(this.phoneNumber)) {
+        if (!phoneRegex.test(this.phone)) {
             throw new Error("Invalid phone number");
         } if (!zipRegex.test(this.zip)) {
             throw new Error("Invalid ZIP code");
@@ -48,7 +48,7 @@ let addressBook = []  //array to store address
 function addAddress(address){
     //uc7
     let duplicateLength = addressBook.filter(existingAddress => existingAddress.firstName === address.firstName);
-    if(duplicateLength > 0){
+    if(duplicateLength.length > 0){
         console.log(address.firstName, " already exist");
         return;
     }
@@ -90,3 +90,16 @@ function sortByName(){ //uc 11
     addressBook.sort((first, second) => 
         (first.firstName > second.firstName) ? 1:-1);
 }
+function sortByCity(){//uc12
+    addressBook.sort((first, second) => 
+        (first.city > second.city) ? 1:-1);
+}
+//test 
+let rajveerAddress = new Address("Rajveer", "Kajle", "AnandNagar", "Bhopal", "Madhya Pradesh", 402022,1234567890, "rajveer@gmail.com");
+let veerAddress = new Address("Rajveer", "Kajle", "AnandNagar", "Bhopal", "Madhya Pradesh", 402022,1234567890, "rajveer@gmail.com");
+
+addAddress(rajveerAddress);
+addAddress(veerAddress);
+viewByCityOrState("Bhopal");
+let totalAddresss = findNumberOfAddress();
+console.log(totalAddresss);

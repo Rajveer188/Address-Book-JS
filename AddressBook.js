@@ -86,4 +86,7 @@ function viewByCityOrState(city, state){ //uc9
 function countByCityOrState(city, state){//uc10
     return searchByCityOrState(city,state).length;
 }
-
+function sortByName(){ //uc 11
+    addressBook.sort((first, second) => 
+        (first.firstName > second.firstName) ? 1:-1);
+}

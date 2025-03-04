@@ -42,8 +42,3 @@ class Address {//uc1
         }
     }
 }
-let addressBook = []  //uc3
-//function to store addressbook to array
-function addAddress(address){
-    addressBook.push(address);
-}
